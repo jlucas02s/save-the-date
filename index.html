@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save the Date - João Lucas & Emilly Caroline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #fffaf5;
+        overflow-x: hidden;
+      }
+      header {
+        background: linear-gradient(#eecda3, #ef629f);
+        color: white;
+        text-align: center;
+        padding: 3rem 1rem;
+        font-size: 2rem;
+      }
+      section {
+        padding: 2rem;
+        text-align: center;
+      }
+      .carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .carousel img {
+        height: 250px;
+        scroll-snap-align: start;
+        border-radius: 12px;
+        transition: transform 0.3s;
+      }
+      .carousel img:hover {
+        transform: scale(1.05);
+      }
+      .form-container {
+        padding: 2rem;
+        background-color: #fff0f0;
+        border-radius: 1rem;
+        max-width: 500px;
+        margin: 2rem auto;
+      }
+      input {
+        padding: 0.8rem;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+      }
+      button {
+        padding: 0.8rem 1.2rem;
+        background-color: #ef629f;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      iframe {
+        width: 100%;
+        height: 250px;
+        border: none;
+        margin-top: 1rem;
+        border-radius: 12px;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #fbeff2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      Save the Date<br />
+      <strong>João Lucas & Emilly Caroline</strong>
+    </header>
+    <section>
+      <img src="/img/convite.png" alt="convite de Casamento" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 2rem auto; display: block;" />
+    </section>
+
+    <section>
+      <h2 class="animate__animated animate__fadeInUp">Informações do Casamento</h2>
+      <p><strong>Data:</strong> 07/02/2026 às 18h</p>
+      <p><strong>Cerimônia:</strong></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.371164136157!2d-56.159033130981534!3d-15.678439686812567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939dac5697b84467%3A0x1934482627eeda5b!2sPar%C3%B3quia%20Santo%20Ant%C3%B4nio!5e0!3m2!1spt-BR!2sbr!4v1746824948569!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p><strong>Recepção:</strong></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.296915790748!2d-56.12369222608366!3d-15.629169618905927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939dadf940adbf37%3A0x1d5aacfdec14d595!2sBuffet%20Casa%20das%20Pedras!5e0!3m2!1spt-BR!2sbr!4v1746824979504!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section>
+      <h2 class="animate__animated animate__fadeIn">Alguns Momentos</h2>
+      <div class="carousel">
+        <img src="img/WhatsApp_Image_2021-10-23_at_10.57.32.jpeg" alt="foto exemplo" />
+        <img src="img/foto2.jpg" alt="foto 2" />
+        <img src="img/foto3.jpg" alt="foto 3" />
+      </div>
+    </section>
+    
+      
+
+        
+    
+    <section>
+            <div class="form-container">
+        <a href="presentes.html"><button class="ver-presentes-btn">NOS ABENÇOE COM UM PRESENTE</button></a>
+     
+      <h2 class="animate__animated animate__fadeInUp">Confirme Sua Presença</h2>
+      <div class="form-container">
+        <input
+          type="text"
+          id="nomeConvidado"
+          placeholder="Digite seu nome completo"
+          required
+        />
+        <button onclick="confirmarPresenca()">Confirmar Presença</button>
+      </div>
+    </section>
+
+    <footer>
+      Com amor, João Lucas & Emilly Caroline 💖
+    </footer>
+
+    <script>
+      function confirmarPresenca() {
+        const nome = document.getElementById('nomeConvidado').value.trim();
+        if (!nome) {
+          alert('Por favor, insira seu nome.');
+          return;
+        }
+        const mensagem = `Olá noivos, eu ${encodeURIComponent(
+          nome
+        )} com certeza estarei presente nesse momento emocionante.`;
+        const linkWhatsApp = `https://wa.me/qr/RZELMF7TOTQ5C1?text=${mensagem}`;
+        window.open(linkWhatsApp, '_blank');
+      }
+    </script>
+  </body>
+</html>
